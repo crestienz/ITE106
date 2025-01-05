@@ -16,14 +16,14 @@ public class PhonebookSystem {
     }
 
     public void createAndShowGUI() {
-        // Main Frame
+        // main frame
         JFrame frame = new JFrame("PHONE BOOK");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(800, 600);
         frame.setLayout(null);
         frame.getContentPane().setBackground(new Color(162, 148, 249)); // for background color
 
-        // Title Label
+        // title label
         JLabel titleLabel = new JLabel("PHONE BOOK");
         titleLabel.setFont(new Font("Arial", Font.BOLD, 24));
         titleLabel.setForeground(Color.WHITE); // for text color
@@ -31,7 +31,7 @@ public class PhonebookSystem {
         titleLabel.setBounds(300, 10, 200, 40);
         frame.add(titleLabel);
 
-        // Search Section
+        // search section
         JLabel searchLabel = new JLabel("Search:");
         searchLabel.setFont(new Font("Arial", Font.PLAIN, 14));
         searchLabel.setForeground(Color.WHITE); // text color
@@ -42,7 +42,7 @@ public class PhonebookSystem {
         searchField.setBounds(80, 60, 200, 25);
         frame.add(searchField);
 
-        // Table Section
+        // table section
         String[] columnNames = {"FIRSTNAME", "LASTNAME", "LOCATION", "PHONE"};
         tableModel = new DefaultTableModel(columnNames, 0);
         contactTable = new JTable(tableModel);
@@ -104,18 +104,18 @@ public class PhonebookSystem {
         phoneField.setBounds(640, 260, 120, 25);
         frame.add(phoneField);
 
-        // Buttons Section
+        // buttons section
         JButton addButton = new JButton("Add");
         addButton.setBackground(Color.GREEN);
         addButton.setForeground(Color.BLACK);
         addButton.setBounds(540, 320, 100, 30);
         frame.add(addButton);
 
-        JButton editButton = new JButton("Edit");
-        editButton.setBackground(Color.YELLOW);
-        editButton.setForeground(Color.BLACK);
-        editButton.setBounds(650, 320, 100, 30);
-        frame.add(editButton);
+        JButton updateButton = new JButton("Update");
+        updateButton.setBackground(Color.YELLOW);
+        updateButton.setForeground(Color.BLACK);
+        updateButton.setBounds(650, 320, 100, 30);
+        frame.add(updateButton);
 
         JButton deleteButton = new JButton("Delete");
         deleteButton.setBackground(Color.RED);
@@ -132,8 +132,8 @@ public class PhonebookSystem {
         // add button 
         addButton.addActionListener(e -> addContact());
 
-        // edit button 
-        editButton.addActionListener(e -> editContact());
+        // update button 
+        updateButton.addActionListener(e -> editContact());
 
         // delete button 
         deleteButton.addActionListener(e -> deleteContact());
